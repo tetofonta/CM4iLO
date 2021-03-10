@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="program_cmrack.elf" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="&quot;Programmed&quot;" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cmrack" TARGET_NAME="program_cmrack.elf" CONFIG_NAME="Debug" RUN_PATH="/bin/echo">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

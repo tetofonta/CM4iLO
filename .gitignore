@@ -1,0 +1,7 @@
+/.idea/
+.cproject
+.mxproject
+.project
+cmrack.xml
+cmake-build-debug/
+peda-session-*.txt
