@@ -63,7 +63,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CAN1_Init(void);
 static void MX_SDIO_MMC_Init(void);
-void StartDefaultTask(void *argument) __attribute__((noreturn));
+void StartDefaultTask(void *argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -97,7 +97,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  CLEAR_CODE();
+    CLEAR_CODE();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -106,27 +106,27 @@ int main(void)
   MX_SDIO_MMC_Init();
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
-  write_code(1);
-  HAL_Delay(100);
+    write_code(1);
+    HAL_Delay(100);
   /* USER CODE END 2 */
 
   /* Init scheduler */
   osKernelInitialize();
 
   /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
+    /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
+    /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
+    /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
+    /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -134,11 +134,11 @@ int main(void)
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
+    /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_EVENTS */
-  /* add events, ... */
+    /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
 
   /* Start scheduler */
@@ -147,7 +147,12 @@ int main(void)
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  Error_Handler();
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
   /* USER CODE END 3 */
 }
 
@@ -337,12 +342,11 @@ void StartDefaultTask(void *argument)
   /* init code for USB_HOST */
   MX_USB_HOST_Init();
   /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  write_code(0x02);
-  for(;;)
-  {
-    osDelay(1);
-  }
+    /* Infinite loop */
+    write_code(0x02);
+    for (;;) {
+        osDelay(1000);
+    }
   /* USER CODE END 5 */
 }
 
@@ -374,11 +378,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 //void Error_Handler(void)
 //{
 //  /* USER CODE BEGIN Error_Handler_Debug */
-//  /* User can add his own implementation to report the HAL error return state */
-//  __disable_irq();
-//  while (1)
-//  {
-//  }
+////  /* User can add his own implementation to report the HAL error return state */
+////  __disable_irq();
+////  while (1)
+////  {
+////  }
 //  /* USER CODE END Error_Handler_Debug */
 //}
 

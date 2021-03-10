@@ -43,11 +43,12 @@ elseif ("${CMAKE_BUILD_TYPE}" STREQUAL "MinSizeRel")
     add_compile_options(-Os)
 else ()
     message(STATUS "Minimal optimization, debug info included")
-    add_compile_options(-Og -g)
+    add_compile_options(-O0 -g)
 endif ()
 
 include_directories(Core/Inc FATFS/Target FATFS/App USB_HOST/App USB_HOST/Target Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_HAL_Driver/Inc/Legacy Middlewares/Third_Party/FreeRTOS/Source/include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F Middlewares/Third_Party/FatFs/src Middlewares/ST/STM32_USB_Host_Library/Core/Inc Middlewares/ST/STM32_USB_Host_Library/Class/AUDIO/Inc Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc Middlewares/ST/STM32_USB_Host_Library/Class/HID/Inc Middlewares/ST/STM32_USB_Host_Library/Class/MSC/Inc Middlewares/ST/STM32_USB_Host_Library/Class/MTP/Inc Drivers/CMSIS/Device/ST/STM32F4xx/Include Drivers/CMSIS/Include)
 include_directories(usercode/include)
+
 add_definitions(-DUSE_HAL_DRIVER -DSTM32F407xx)
 
 file(GLOB_RECURSE SOURCES "startup/*.*" "USB_HOST/*.*" "FATFS/*.*" "Middlewares/*.*" "Drivers/*.*" "Core/*.*" "usercode/*.*")
