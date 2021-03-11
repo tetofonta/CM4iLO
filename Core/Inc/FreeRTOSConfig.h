@@ -56,7 +56,7 @@ extern uint32_t SystemCoreClock;
 #endif
 #define configENABLE_FPU                         1
 #define configENABLE_MPU                         0
-
+#define configUSE_NEWLIB_REENTRANT               1
 #define configUSE_PREEMPTION                     1
 #define configSUPPORT_STATIC_ALLOCATION          1
 #define configSUPPORT_DYNAMIC_ALLOCATION         1
@@ -66,6 +66,7 @@ extern uint32_t SystemCoreClock;
 #define configTICK_RATE_HZ                       ((TickType_t)1000)
 #define configMAX_PRIORITIES                     ( 56 )
 #define configMINIMAL_STACK_SIZE                 ((uint16_t)128)
+#define configISR_STACK_SIZE_WORDS               ((uint16_t)128)
 #define configTOTAL_HEAP_SIZE                    ((size_t)15360)
 #define configMAX_TASK_NAME_LEN                  ( 16 )
 #define configUSE_TRACE_FACILITY                 1
