@@ -71,6 +71,8 @@ extern "C" {
 
 /* USER CODE END Private defines */
 
+#define __noreturn __attribute((noreturn))
+
 #ifdef __cplusplus
 }
 #endif

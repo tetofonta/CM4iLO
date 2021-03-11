@@ -5,11 +5,11 @@
 #include "error_handler.h"
 #include "main.h"
 
-uint8_t func_to_code(const char * function_name, uint8_t variant){
+uint8_t func_to_code(const char * function_name, uint32_t variant){
     uint8_t r = 0xBA;
     while(*function_name != 0x00)
         r ^= *(function_name++);
-    return r ^ variant;
+    return r ^ variant&0xFF ^ ((variant&0xFF00) >> 8) >> ((variant&0xFF0000) >> 16);
 }
 
 void error_handler_code (int code){

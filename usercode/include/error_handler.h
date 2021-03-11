@@ -7,10 +7,9 @@
 
 #include <stdint.h>
 #include "code_display.h"
-uint8_t func_to_code(const char *, uint8_t);
+uint8_t func_to_code(const char *, uint32_t);
 void error_handler_code(int) __attribute__((noreturn));
 
-#define Error_Handler() error_handler_code(func_to_code(__func__, 0))
-#define Error_Handler_Variant(v) error_handler_code(func_to_code(__func__, v))
+#define Error_Handler() error_handler_code(func_to_code(__func__, __LINE__))
 
 #endif //CMRACK_ERROR_HANDLER_H
