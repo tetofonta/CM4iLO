@@ -26,7 +26,25 @@ extern USBH_ClassTypeDef RPI_Class;
 
 typedef struct RPI_USB_status{
     RPI_DataStateTypeDef status;
+    uint8_t interface;
+    uint8_t in_ep, in_pipe, in_size;
+    uint8_t out_ep, out_pipe, out_size;
+    uint8_t ctrl_pipe;
 } RPI_USB_status;
+
+typedef struct MESSAGE_S {
+    int length;
+    unsigned char signature[20];
+} boot_message_t;
+
+typedef struct {
+    uint8_t bmRequestType;
+    uint8_t bRequest;
+    uint16_t wValue;
+    uint16_t wIndex;
+    uint16_t wLength;
+}usb_setup_packet __attribute__((packed));
+
 
 #ifdef __cplusplus
 }
