@@ -11,11 +11,17 @@ extern "C" {
 
 typedef enum {
     RPI_IDLE = 0U,
-    RPI_SND_BOOTLOADER,
-    RPI_WAIT_BOOTLOADER,
-    RPI_FILE_SERVER,
-    RPI_FILE_SERVER_SND,
-    RPI_FILE_SERVER_WAIT
+
+    EP_WRITE_INIT,
+    EP_WRITE,
+    EP_READ_INIT,
+    EP_READ,
+
+    RPI_SND_BOOTLOADER_HEADER,
+    RPI_SND_BOOTLOADER_DATA,
+    RPI_SND_BOOTLOADER_RESPONSE,
+
+    RPI_FILE_SERVER
 } RPI_DataStateTypeDef;
 
 extern USBH_ClassTypeDef RPI_Class;
@@ -27,24 +33,23 @@ extern USBH_ClassTypeDef RPI_Class;
 typedef struct RPI_USB_status{
     RPI_DataStateTypeDef status;
     uint8_t interface;
-    uint8_t in_ep, in_pipe, in_size;
-    uint8_t out_ep, out_pipe, out_size;
-    uint8_t ctrl_pipe;
+    uint8_t in_ep, in_pipe;
+    uint16_t in_size;
+    uint8_t out_ep, out_pipe;
+    uint16_t out_size;
+
+    size_t sending_await;
+    void * send_buffer;
+    RPI_DataStateTypeDef next;
+
+    size_t receiving_len;
+    void * recv_buffer;
 } RPI_USB_status;
 
 typedef struct MESSAGE_S {
     int length;
     unsigned char signature[20];
 } boot_message_t;
-
-typedef struct {
-    uint8_t bmRequestType;
-    uint8_t bRequest;
-    uint16_t wValue;
-    uint16_t wIndex;
-    uint16_t wLength;
-}usb_setup_packet __attribute__((packed));
-
 
 #ifdef __cplusplus
 }

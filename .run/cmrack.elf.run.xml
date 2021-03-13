@@ -1,29 +1,16 @@
 <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="cmrack.elf" type="CMakeRunConfiguration" factoryName="Application"
-                   nameIsGenerated="true" PROGRAM_PARAMS="&quot;Compiled&quot;" REDIRECT_INPUT="false" ELEVATE="false"
-                   PASS_PARENT_ENVS_2="true" PROJECT_NAME="cmrack" TARGET_NAME="cmrack.elf" CONFIG_NAME="Debug"
-                   RUN_PATH="/bin/echo">
-        <method v="2">
-            <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask"
-                    enabled="true"/>
-        </method>
-    </configuration>
-    <configuration default="false" name="cmrack.elf" type="com.jetbrains.cidr.embedded.customgdbserver.type"
-                   factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" nameIsGenerated="true"
-                   PROGRAM_PARAMS="-c config.txt" REDIRECT_INPUT="false" ELEVATE="false"
-                   WORKING_DIR="file:///media/stefano/2dd115ac-6c56-4132-b42f-d3769236c250/embedded/ST/STM32CubeProgrammer/bin/"
-                   PASS_PARENT_ENVS_2="true" PROJECT_NAME="cmrack" TARGET_NAME="cmrack.elf" CONFIG_NAME="Debug"
-                   version="1" RUN_TARGET_PROJECT_NAME="cmrack" RUN_TARGET_NAME="cmrack.elf">
-        <custom-gdb-server version="1" gdb-connect="localhost:61234"
-                           executable="/media/stefano/2dd115ac-6c56-4132-b42f-d3769236c250/embedded/ST/STM32CubeProgrammer/bin/ST-LINK_gdbserver"
-                           warmup-ms="0" download-type="UPDATED_ONLY" reset-cmd="monitor reset"
-                           reset-after-download="true">
-            <debugger kind="GDB" isBundled="true"/>
-        </custom-gdb-server>
-        <method v="2">
-            <option name="CLION.COMPOUND.BUILD" enabled="true"/>
-            <option name="RunConfigurationTask" enabled="true" run_configuration_name="program_cmrack.elf"
-                    run_configuration_type="CMakeRunConfiguration"/>
-        </method>
-    </configuration>
+  <configuration default="false" name="cmrack.elf" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" PROGRAM_PARAMS="&quot;Compiled&quot;" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cmrack" TARGET_NAME="cmrack.elf" CONFIG_NAME="Debug" RUN_PATH="/bin/echo">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+  <configuration default="false" name="cmrack.elf" type="com.jetbrains.cidr.embedded.customgdbserver.type" factoryName="com.jetbrains.cidr.embedded.customgdbserver.factory" nameIsGenerated="true" PROGRAM_PARAMS="-c config.txt" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file:///media/stefano/2dd115ac-6c56-4132-b42f-d3769236c250/embedded/ST/STM32CubeProgrammer/bin/" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cmrack" TARGET_NAME="cmrack.elf" CONFIG_NAME="Debug" version="1" RUN_TARGET_PROJECT_NAME="cmrack" RUN_TARGET_NAME="cmrack.elf">
+    <custom-gdb-server version="1" gdb-connect="localhost:61234" executable="/media/stefano/2dd115ac-6c56-4132-b42f-d3769236c250/embedded/ST/STM32CubeProgrammer/bin/ST-LINK_gdbserver" warmup-ms="0" download-type="UPDATED_ONLY" reset-cmd="monitor reset" reset-after-download="true">
+      <debugger kind="GDB" isBundled="true" />
+    </custom-gdb-server>
+    <method v="2">
+      <option name="CLION.COMPOUND.BUILD" enabled="true" />
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="program_cmrack.elf" run_configuration_type="CMakeRunConfiguration" />
+    </method>
+  </configuration>
 </component>
